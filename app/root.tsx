@@ -7,7 +7,7 @@ import {
   redirect,
 } from "@remix-run/react";
 import type { LinksFunction } from "@remix-run/node";
-import stylesheet from "~/tailwind.css";
+import stylesheet from "~/tailwind.css?url";
 export async function loader({ request }) {
   const url = new URL(request.url);
   if (url.pathname === "/") {

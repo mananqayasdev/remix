@@ -4,8 +4,23 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  redirect,
 } from "@remix-run/react";
 
+export async function loader({ request }) {
+  const url = new URL(request.url);
+  if (url.pathname === "/") {
+    return redirect("/en-ca");
+  }
+  return null;
+}
+
+import type { LinksFunction } from "@remix-run/node";
+import stylesheet from "~/tailwind.css";
+
+export const links: LinksFunction = () => [
+  { rel: "stylesheet", href: stylesheet },
+];
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">

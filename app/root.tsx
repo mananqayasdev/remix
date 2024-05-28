@@ -1,14 +1,13 @@
 import {
   Links,
   Meta,
+  Outlet,
   Scripts,
   ScrollRestoration,
   redirect,
 } from "@remix-run/react";
-
 import type { LinksFunction } from "@remix-run/node";
-import stylesheet from "~/tailwind.css?url";
-
+import stylesheet from "~/tailwind.css";
 export async function loader({ request }) {
   const url = new URL(request.url);
   if (url.pathname === "/") {
@@ -37,4 +36,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </body>
     </html>
   );
+}
+
+export default function App() {
+  return <Outlet />;
 }

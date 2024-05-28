@@ -10,7 +10,7 @@ export default function CaHome() {
         alignItems: "center",
       }}
     >
-      <h1 className="text-[64px] text-white">Welcome to our Canadian site</h1>
+      <h1 className="text-[20px] text-white">Welcome to our Canadian site</h1>
     </div>
   );
 }
